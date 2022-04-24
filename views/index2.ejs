@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GlurGeek Website</title>
+    <meta name="description" content="profile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <!-- Navigation Bar -->
+        <header>
+            <nav>
+                <img class="logo" src=<%=topbar_logo %> alt="logo">
+                <div class="links">
+                    <% obj_topbar_p.forEach(function(topbar_p){ %>
+                    <a href="#"><%=topbar_p.info %></a>
+                    <% }) %>
+                    <button class="button_med" href="#"><%=topbar_buttom %></button>
+                </div>
+            </nav>
+        </header>
+        <!-- Contents -->
+        <section class="info">
+            <h1 class="content_font1"><%=contentfont1 %></h1>
+            <h4 class="content_font2"><%=contentfont2 %></h4>
+                <div class="icons">
+                    <% obj_icons.forEach(function(icons){ %>
+                    <div class="icon">
+                        <img src=<%=icons.img %> >
+                        <p class="icon_info"><%=icons.info %></p>
+                    </div>
+                    <% }) %>
+                </div>
+                <!--
+                    <div class="icon">
+                        <img src="images/email.svg" alt="email">
+                    </div>
+                    <div class="icon">
+                        <img src="images/facebook.svg" alt="facebook" class="iface">
+                        <p class="icon_info iface texticon">pongsapak</p>
+                    </div>
+                       
+                    <div class="icon">
+                        <img src="images/twitter.svg" alt="twitter" class="itwit">
+                        <p class="icon_info itwit texticon">pongsapak</p>
+                    </div> 
+                    <div class="icon">
+                        <img src="images/youtube.svg" alt="youtube" class="iyou">
+                        <p class="icon_info iyou texticon">pongsapak</p>
+                    </div>
+                </div>
+                -->
+        </section>
+        <!-- Feature Bar -->
+        <section class="features">
+            <!-- Add Parameters that forEach loop -->
+            <% obj_feature.forEach(function(feature){ %>
+            <div class="feature">
+                <img src= <%= feature.img %> alt="programming">
+                <div class="feature_info">
+                    <p class="feature_top"><%= feature.top %></p>
+                    <p class="feature_bottom"><%= feature.bottom %></p>
+                </div>
+            </div>
+            <% }) %>
+            <!-- Comment not use
+            <div class="feature">
+                <img src="images/aiot.jpg" alt="aiot">
+                <div class="feature_info">
+                    <p class="feature_top">AIoT and Robotics</p>
+                    <p class="feature_bottom">Enjoy Coding and Playing
+                        Python, ROS, Mechanics</p>
+                </div>
+            </div>
+            -->
+            <div class="feature">
+                <div class="feature_info">
+                    <p class="feature_more"><%= feature_more %></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
